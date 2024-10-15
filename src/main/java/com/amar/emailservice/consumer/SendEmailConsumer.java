@@ -15,7 +15,7 @@ import java.util.Properties;
 @Service
 public class SendEmailConsumer {
 
-    private ObjectMapper objectMapper;
+    private final ObjectMapper objectMapper;
 
     public SendEmailConsumer(ObjectMapper objectMapper){
         this.objectMapper = objectMapper;
@@ -42,7 +42,7 @@ public class SendEmailConsumer {
             Authenticator auth = new Authenticator() {
                 //override the getPasswordAuthentication method
                 protected PasswordAuthentication getPasswordAuthentication() {
-                    return new PasswordAuthentication("amaremailservice@gmail.com", "tlnx hryv aqbg xygz");
+                    return new PasswordAuthentication("amaremailservice@gmail.com", "password");
                 }
             };
             Session session = Session.getInstance(props, auth);
